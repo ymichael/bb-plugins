@@ -2,6 +2,8 @@
 
 BB Office is a calm, living office overview for BB. It floats above the desktop app, shows visible BB threads as workers, highlights the current thread, and opens a thread when its worker is clicked. BB's native sidebar remains full-height and scrollable.
 
+![BB Office running as a floating office inside BB](media/bb-office-in-bb.png)
+
 ## V1 behavior
 
 - Active threads work at stable desks.
