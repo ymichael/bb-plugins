@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.turbo/
+**/.turbo/
+coverage/
+.DS_Store
+*.log
+plugins/*/design/
+plans/

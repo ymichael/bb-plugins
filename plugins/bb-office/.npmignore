@@ -1,0 +1,5 @@
+.turbo/
+design/
+*.test.ts
+vitest.config.ts
+dist/*.map
