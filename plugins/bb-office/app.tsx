@@ -4,7 +4,7 @@ import {
   definePluginApp,
   experimental_useProviders,
   experimental_useSidebarThreads,
-  type PluginThreadListProps,
+  useBbContext,
   useBbNavigate,
   useRealtime,
   useRpc,
@@ -419,42 +419,41 @@ function BbOfficeFloatingOffice({
   );
 }
 
-function BbOfficeThreadList({
-  Original,
-  activeThreadId,
-  isCompactViewport,
-  onNavigate,
-}: PluginThreadListProps) {
+function BbOfficeOverlay() {
+  const { threadId: activeThreadId } = useBbContext();
   const navigate = useBbNavigate();
+  // The app overlay owns responsive behavior; it receives no sidebar props.
+  const [isCompactViewport, setIsCompactViewport] = useState(
+    () => window.matchMedia("(max-width: 767px)").matches,
+  );
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsCompactViewport(media.matches);
+    media.addEventListener("change", update);
+    update();
+    return () => media.removeEventListener("change", update);
+  }, []);
   const openThread = useCallback(
     (threadId: string) => {
       navigate.toThread(threadId);
-      onNavigate();
     },
-    [navigate, onNavigate],
+    [navigate],
   );
 
-  if (isCompactViewport) return <Original />;
+  if (isCompactViewport) return null;
 
-  return (
-    <>
-      <Original />
-      {createPortal(
-        <BbOfficeFloatingOffice
-          activeThreadId={activeThreadId}
-          onOpenThread={openThread}
-        />,
-        document.body,
-      )}
-    </>
+  return createPortal(
+    <BbOfficeFloatingOffice
+      activeThreadId={activeThreadId}
+      onOpenThread={openThread}
+    />,
+    document.body,
   );
 }
 
 export default definePluginApp((app) => {
-  app.slots.experimental_threadList({
+  app.slots.experimental_appOverlay({
     id: "bb-office-floating",
-    title: "BB Office",
-    description: "A draggable office overview for live BB threads.",
-    component: BbOfficeThreadList,
+    component: BbOfficeOverlay,
   });
 });

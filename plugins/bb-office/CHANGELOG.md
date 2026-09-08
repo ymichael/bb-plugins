@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Moved the floating office to BB’s app overlay API so it works independently of sidebar replacements and stays mounted across navigation. Requires Plugin SDK 0.4.47 or newer.
+
 ## 1.0.0 — 2026-09-01
 
 - Made expansion and collapse animate from one immutable worker anchor, fixing position drift across mode changes.

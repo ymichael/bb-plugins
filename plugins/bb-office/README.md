@@ -1,6 +1,6 @@
 # BB Office
 
-BB Office is a calm, living office overview for BB. It floats above the desktop app, shows visible BB threads as workers, highlights the current thread, and opens a thread when its worker is clicked. BB's native sidebar remains full-height and scrollable.
+BB Office is a calm, living office overview for BB. It floats above the desktop app, shows visible BB threads as workers, highlights the current thread, and opens a thread when its worker is clicked. It uses BB's app overlay API, so it works independently of the selected sidebar thread list and remains mounted across navigation.
 
 ![BB Office running as a floating office inside BB](media/bb-office-in-bb.png)
 
@@ -26,6 +26,8 @@ Usage follows the active thread's machine when one is selected and otherwise use
 BB Office uses only BB's local plugin APIs and does not contact a third-party service. Thread presentation stays inside BB, office configuration is stored in BB's plugin storage, and panel placement is stored locally on the device. Provider account email is removed before usage summaries reach the frontend.
 
 ## Install locally
+
+Requires BB with Plugin SDK 0.4.47 or newer for the app overlay API.
 
 From this repository root:
 
