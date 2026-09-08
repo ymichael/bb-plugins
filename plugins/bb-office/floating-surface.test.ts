@@ -16,8 +16,10 @@ function ruleBody(selector: string): string {
 }
 
 describe("BB Office floating surface", () => {
-  test("passes the native thread list through and portals the office", () => {
-    expect(app).toContain("<Original />");
+  test("registers an independent app overlay and portals the office", () => {
+    expect(app).toContain("app.slots.experimental_appOverlay(");
+    expect(app).not.toContain("experimental_threadList");
+    expect(app).not.toContain("<Original />");
     expect(app).toContain("createPortal(");
     expect(app).toContain("document.body");
     expect(app).not.toContain('className="bb-office-sidebar"');
@@ -47,7 +49,7 @@ describe("BB Office floating surface", () => {
   });
 
   test("keeps the floating office off compact screens", () => {
-    expect(app).toContain("if (isCompactViewport) return <Original />");
+    expect(app).toContain("if (isCompactViewport) return null");
     expect(css).toContain("@media (max-width: 46rem)");
   });
 
