@@ -21,3 +21,7 @@ limited to its runtime dependencies: BB installs a plugin directory with
 `npm install --omit=dev`, and npm still resolves any development dependencies
 listed in that directory, which can fail on unrelated tooling peer dependencies.
 Run development commands from this workspace after `corepack pnpm install`.
+
+The development tools are the BB SDK and CLI, TypeScript and Node/React types,
+Turbo, and Vitest with jsdom and React Testing Library. React and React DOM
+support local UI tests; BB supplies them when the plugin runs in the app.
