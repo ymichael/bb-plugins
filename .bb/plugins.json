@@ -6,6 +6,10 @@
     {
       "name": "bb-office",
       "source": "./plugins/bb-office"
+    },
+    {
+      "name": "lame-duck",
+      "source": "./plugins/lame-duck"
     }
   ]
 }
