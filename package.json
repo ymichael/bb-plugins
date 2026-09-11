@@ -13,17 +13,6 @@
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
-    "@get-bb/plugin-sdk": "0.4.47",
-    "@testing-library/react": "^16.3.2",
-    "@types/node": "^22.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "bb-app": "0.42.1",
-    "jsdom": "^29.0.1",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "turbo": "^2.8.3",
-    "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "vitest": "^4.1.1"
+    "turbo": "^2.8.3"
   }
 }
