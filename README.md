@@ -5,7 +5,7 @@ Michael's BB plugins live in `plugins/`, with one independently releasable packa
 ## Plugins
 
 - [BB Office](plugins/bb-office) — a calm, living office overview of active BB threads.
-- [Lame duck](plugins/lame-duck/PLUGIN_OVERVIEW.md) — pause sends, drain active threads, and resume queued work after maintenance.
+- [Lame duck](plugins/lame-duck/PLUGIN_OVERVIEW.md) — drain a busy BB server for an update or restart, then resume queued work; use the footer controls or an agent-driven CLI workflow.
 
 ## Development
 
