@@ -18,7 +18,4 @@ An actual BB version upgrade was not tested. Restart does not auto-resume.
 
 ## SDK dependency
 
-The plugin requires SDK 0.4.84 for the shared icon API. The matching SDK was
-packed from the running BB checkout into `vendor/get-bb-plugin-sdk-0.4.84.tgz`
-because that version was not published when development began. Replace this
-local dependency with the matching npm release when available.
+The plugin uses published `@get-bb/plugin-sdk@0.4.84` for the shared icon API.
