@@ -1,6 +1,6 @@
 {
   "name": "bb-plugin-bb-office",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A calm, living office overview of active BB threads.",
   "type": "module",
   "license": "MIT",
